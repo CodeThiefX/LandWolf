@@ -8,42 +8,131 @@
     src: url('../fonts/SedgwickAveDisplay-Regular.ttf');
 }
 
-body{
-    height: 100vh;
-    width: 100vw;
-    padding: 0px;
-    margin:0px;
-    color:white;
+.tracking-in-expand {
+    -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
-.content{
-    height:100%;
-    width:100%;
+@-webkit-keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.text-focus-in {
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@-webkit-keyframes text-focus-in {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes text-focus-in {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+body {
+    width: 100vw;
+    color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/backgr.png);
+}
+
+.content {
+    height: fit-content;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/backgr.png);
     background-size: cover;
     background-position: center;
 }
 
-.wolflogo{
-    width:25vw;
+.wolflogo {
+    width: 25vw;
     min-width: 270px;
     max-width: 700px;
 }
 
-.bannerTitle{
+.bannerTitle {
     font-family: 'Sedgwick';
     font-size: 50px;
 }
 
-.bannerText{
-    text-align:center;
+.bannerText {
+    text-align: center;
     width: 40vw;
     min-width: 300px;
     max-width: 1000px;
     font-family: 'TulpenOne';
     font-size: 30px;
+}
+
+.buttonClass {
+    font-size: 15px;
+    font-family: Arial;
+    width: 140px;
+    height: 50px;
+    border-width: 1px;
+    color: #333333;
+    border-color: #ffaa22;
+    font-weight: bold;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    box-shadow: 0px 1px 0px 0px #fff6af;
+    text-shadow: 0px 1px 0px #ffee66;
+    background: linear-gradient(#ffec64, #ffab23);
+    padding: 20px 30px;
+    text-decoration: none;
+}
+
+.buttonClass:hover {
+    background: linear-gradient(#ffab23, #ffec64);
 }
